@@ -1,0 +1,25 @@
+{
+  "name": "typesetter-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khamzat91/typesetter-test.git"
+  },
+  "author": "Khamzat Midaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Khamzat91/typesetter-test/issues"
+  },
+  "homepage": "https://github.com/Khamzat91/typesetter-test#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^1.0.2"
+  }
+}
