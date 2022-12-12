@@ -1,0 +1,112 @@
+@import "./vars";
+@import "./fonts";
+@import "./global";
+
+.header {
+  &__inner {
+    margin-top: 24px;
+    &-top {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      &__logo {
+        width: 88px;
+        height: 24px;
+        margin-right: 16px;
+      }
+      &__city {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &-btn {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border: 1px solid #a7a7a7;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          padding: 7px 2px 5px 1px;
+
+          &:hover {
+            border: 1px solid #fff;
+          }
+        }
+        &-scope {
+          margin-left: 8px;
+          margin-right: 61px;
+          color: $bg;
+        }
+      }
+      &__input {
+        max-width: 592px;
+        width: 100%;
+        position: relative;
+        margin-right: 93px;
+        &-search {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+        }
+        &-profession {
+          width: 100%;
+          border: 2px solid #abc8ea;
+          border-radius: 100px;
+          padding: 14px 48px 12px;
+          outline: none;
+          color: $bg;
+          &::placeholder {
+            color: #767676;
+            text-align: center;
+          }
+        }
+        &-clear {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          cursor: pointer;
+          display: none;
+        }
+      }
+      &__favorite {
+        display: flex;
+        align-items: center;
+        margin-right: 39px;
+        cursor: pointer;
+        &-count {
+          color: $bg;
+          margin-left: 5px;
+        }
+      }
+      &__user {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &-name {
+          color: $bg;
+          margin-right: 7px;
+        }
+      }
+    }
+    &-menu {
+      position: relative;
+      &__list {
+        display: flex;
+        align-items: center;
+        &-link {
+          margin-right: 40px;
+          text-align: center;
+          font-size: 14px;
+          line-height: 19px;
+          color: $bg;
+        }
+      }
+      &__arrowadd {
+        position: absolute;
+        right: 35px;
+        top: 3px;
+        cursor: pointer;
+      }
+    }
+  }
+}
