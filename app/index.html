@@ -13,8 +13,74 @@
         <div class="header__inner-top">
           <img src="./images/logo.png" alt="" class="header__inner-top__logo" />
           <div class="header__inner-top__city">
-            <img class="header__inner-top__city-btn" src="./images/city.svg" alt="" />
-            <div class="header__inner-top__city-scope">Любой регион</div>
+            <div class="header__inner-top__city-location">
+              <img
+                class="header__inner-top__city-btn"
+                src="./images/city.svg"
+                alt=""
+              />
+              <div class="header__inner-top__city-scope">Любой регион</div>
+            </div>
+            <div class="header__inner-top__city-modal">
+              <label class="header__inner-top__city-modal__input">
+                <input
+                  class="header__inner-top__city-modal__settlement"
+                  type="text"
+                  placeholder="Регион, город, населенный пункт"
+                />
+                <img
+                  src="./images/close.svg"
+                  alt=""
+                  class="header__inner-top__city-modal__clear"
+                />
+              </label>
+              <div class="header__inner-top__city-modal__selected">
+                <div class="header__inner-top__city-modal__select">
+                  Екатеринбург
+                  <img
+                    class="header__inner-top__city-modal__select__clear"
+                    src="./images/close-modal.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="header__inner-top__city-modal__items">
+                <div class="header__inner-top__city-modal__item">
+                  Московская область
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Вся Россия
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Санкт-Петербург
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Новосибирск
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Екатеринбург
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Московская область
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Вся Россия
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Санкт-Петербург
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Новосибирск
+                </div>
+                <div class="header__inner-top__city-modal__item">
+                  Екатеринбург
+                </div>
+              </div>
+
+              <button class="header__inner-top__city-modal__btn active">
+                сохранить
+              </button>
+            </div>
           </div>
           <label class="header__inner-top__input">
             <img
@@ -22,8 +88,16 @@
               alt=""
               class="header__inner-top__input-search"
             />
-            <input class="header__inner-top__input-profession" type="text" placeholder="Учебное заведение, специальность или профессия"/>
-            <img src="./images/close.svg" alt="" class="header__inner-top__input-clear" />
+            <input
+              class="header__inner-top__input-profession"
+              type="text"
+              placeholder="Учебное заведение, специальность или профессия"
+            />
+            <img
+              src="./images/close.svg"
+              alt=""
+              class="header__inner-top__input-clear"
+            />
           </label>
           <div class="header__inner-top__favorite">
             <img
@@ -31,7 +105,7 @@
               alt=""
               class="header__inner-top__favorite-heart"
             />
-            <div class="header__inner-top__favorite-count">1</div>
+            <div class="header__inner-top__favorite-sum">1</div>
           </div>
           <div class="header__inner-top__user">
             <div class="header__inner-top__user-name">Екатерина</div>
