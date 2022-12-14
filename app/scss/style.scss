@@ -42,7 +42,7 @@
         }
 
         &-modal {
-          display: none;
+          // display: none;
           position: absolute;
           width: 384px;
           background: #fbfbfb;
@@ -103,8 +103,9 @@
             position: relative;
             margin-top: 10px;
             overflow: auto;
+
             &::-webkit-scrollbar {
-              width: 12px;
+              width: 10px;
             }
             &::-webkit-scrollbar-track {
               background: transparent;
@@ -113,10 +114,9 @@
               background-color: rgb(226, 226, 236);
               border-radius: 20px;
               border: 3px solid rgb(248, 247, 246);
-              &:hover{
-                background-color: rgb(165, 165, 179);
-                border-radius: 20px;
+              &:hover {
                 border: 2px solid rgb(248, 247, 246);
+                background-color: rgb(150, 150, 165);
               }
             }
           }
@@ -143,6 +143,7 @@
             border-top: 1px solid #d8d8d8;
             text-transform: uppercase;
             width: 100%;
+            transition: all 0.3s ease-in-out;
             &.active {
               background-color: #0656b4;
               color: #fff;
