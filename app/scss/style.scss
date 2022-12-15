@@ -42,7 +42,6 @@
         }
 
         &-modal {
-          // display: none;
           position: absolute;
           width: 384px;
           background: #fbfbfb;
@@ -50,6 +49,9 @@
           border-radius: 10px;
           z-index: 1;
           top: 40px;
+          &.toggle{
+            display: none;
+          }
           &__input {
             max-width: 352px;
             width: 100%;
@@ -125,6 +127,9 @@
             padding: 8px 16px 11px;
             color: $bg;
             cursor: pointer;
+            &.hide{
+              display: none;
+            }
           }
           &__btn {
             border-radius: 0px 0px 10px 10px;
@@ -226,4 +231,7 @@
       }
     }
   }
+mark{
+  background-color: rgb(101, 107, 163);
+}
 }
