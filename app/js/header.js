@@ -3,6 +3,7 @@ let modal = document.querySelector(".header__inner-top__city-modal");
 let clearInput = document.querySelector(
   ".header__inner-top__city-modal__clear"
 );
+let selectMod = document.querySelector('.header__inner-top__city-modal__select');
 document.querySelector(".header__inner-top__city-modal__settlement").oninput =
   function () {
     let inputCity = this.value.trim();
