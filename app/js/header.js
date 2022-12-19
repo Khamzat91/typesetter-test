@@ -113,22 +113,38 @@ function inserMark(string, pos, len) {
 // Московская область
 // </div>
 
+const onAddData = () => {
+const selectCiti = document.createElement('.header__inner-top__city-modal__select')
+}
+
+
+
 const onShowModal = () => {
   modal.classList.toggle("toggle");
 
   if (!modal.getAttribute("class").includes("toggle")) {
     for (let i = 0; i < ariasData.length; i++) {
-    const area = document.createElement('div');
-    area.className = 'header__inner-top__city-modal__item';
-    area.id = 'all';
-    area.setAttribute('data-type', 'country');
-    area.textContent = 'Россия';
-    areasList.appendChild(area); 
+      const area = document.createElement("div");
+      area.className = "header__inner-top__city-modal__item";
+      area.id = ariasData[i].id;
+      area.setAttribute("data-type", "country");
+      area.textContent = ariasData[i].name;
+      areasList.appendChild(area);
       if (ariasData[i].cities) {
-        
+        let cities = ariasData[i].cities;
+        for (let j = 0; j < cities.length; j++) {
+          const city = document.createElement("div");
+          city.className = "header__inner-top__city-modal__item";
+          city.id = cities[j].id;
+          city.setAttribute("data-type", "country");
+          city.textContent = cities[j].name;
+          areasList.appendChild(city);
+        }
       }
     }
   }
-
 };
+
+
+
 city.onclick = onShowModal;
