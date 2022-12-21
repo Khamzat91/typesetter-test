@@ -3,7 +3,7 @@ let modal = document.querySelector(".header__inner-top__city-modal");
 const selectedAll = document.querySelector(
   ".header__inner-top__city-modal__selected"
 );
-let inputModal = document.querySelector(".header__inner-top__city-modal__input");
+
 let clearInput = document.querySelector(
   ".header__inner-top__city-modal__clear"
 );
@@ -13,6 +13,9 @@ const areasList = document.querySelector(
 let selectMod = document.querySelector(
   ".header__inner-top__city-modal__select"
 );
+
+const btnModal = document.querySelector(".header__inner-top__city-modal__btn");
+const scope = document.querySelector(".header__inner-top__city-scope");
 
 const ariasData = [
   {
@@ -73,44 +76,53 @@ const ariasData = [
   },
 ];
 
-document.querySelector(".header__inner-top__city-modal__settlement").oninput =
-  function () {
-    let inputCity = this.value.trim();
-    let modalItem = document.querySelectorAll(
-      ".header__inner-top__city-modal__item"
-    );
+let inputCity = document.querySelector(
+  ".header__inner-top__city-modal__settlement"
+);
+inputCity.oninput = function () {
+  let inputCityValue = this.value.trim();
+  let modalItem = document.querySelectorAll(
+    ".header__inner-top__city-modal__item"
+  );
 
-    if (inputCity !== "") {
-      modalItem.forEach((item) => {
-        if (item.innerText.search(inputCity) === -1) {
-          item.classList.add("hide");
-          item.innerHTML = item.innerText;
-        } else {
-          item.classList.remove("hide");
-          let str = item.innerText;
-          item.innerHTML = inserMark(
-            str,
-            item.innerText.search(inputCity),
-            inputCity.length
-          );
-        }
-      });
-    } else {
-      modalItem.forEach((item) => {
-        item.classList.remove("hide");
+  if (inputCityValue !== "") {
+    modalItem.forEach((item) => {
+      if (item.innerText.search(inputCityValue) === -1) {
+        item.classList.add("hide");
         item.innerHTML = item.innerText;
-      });
-    }
-    if (inputCity.length) {
-    const imageInput = document.createElement('img');
-    imageInput.classList.add('header__inner-top__city-modal__close')
-    imageInput.src = "../images/close.svg"
-    inputModal.appendChild(imageInput)
-    }
-    imageInput.onclick = () => {
-      inputCity.value = ""
-    }
+      } else {
+        item.classList.remove("hide");
+        let str = item.innerText;
+        item.innerHTML = inserMark(
+          str,
+          item.innerText.search(inputCityValue),
+          inputCityValue.length
+        );
+      }
+    });
+  } else {
+    modalItem.forEach((item) => {
+      item.classList.remove("hide");
+      item.innerHTML = item.innerText;
+    });
+  }
+  const imageInput = document.querySelector(
+    ".header__inner-top__city-modal__close"
+  );
+  if (inputCityValue.length) {
+    imageInput.style.display = "block";
+  } else {
+    imageInput.style.display = "none";
+  }
+  imageInput.onclick = () => {
+    inputCity.value = "";
+    imageInput.style.display = "none";
+    modalItem.forEach((item) => {
+      item.classList.remove("hide");
+      item.innerHTML = item.innerText;
+    });
   };
+};
 
 function inserMark(string, pos, len) {
   return (
@@ -124,21 +136,31 @@ function inserMark(string, pos, len) {
 
 const onAddData = (e) => {
   const selectCiti = document.createElement("div");
-  selectCiti.className ="header__inner-top__city-modal__select";
+  selectCiti.className = "header__inner-top__city-modal__select";
   const imageCiti = document.createElement("img");
   imageCiti.className = "header__inner-top__city-modal__select__clear";
   imageCiti.src = "../images/close-modal.svg";
   selectCiti.id = e.target.id;
-  selectCiti.setAttribute("data-type", e.target.getAttribute('data-type'));
-  e.target.getAttribute('data-type')
+  selectCiti.setAttribute("data-type", e.target.getAttribute("data-type"));
+  e.target.getAttribute("data-type");
   selectCiti.textContent = e.target.textContent;
   selectCiti.appendChild(imageCiti);
   selectedAll.appendChild(selectCiti);
   imageCiti.onclick = () => {
-    selectCiti.remove()
-  }
+    selectCiti.remove();
+    btnModal.classList.toggle("active");
+  };
+    btnModal.classList.toggle("active");
+
 };
 
+const onAddSelected = () => {
+if (selectedAll.children.length) {
+  
+}
+};
+
+btnModal.onclick = onAddSelected;
 
 let isModalOpen = false;
 const onShowModal = () => {
