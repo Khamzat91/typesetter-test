@@ -134,7 +134,7 @@ function inserMark(string, pos, len) {
   );
 }
 
-const onAddData = (e) => {
+const onAddData = (e, item) => {
   const selectCiti = document.createElement("div");
   selectCiti.className = "header__inner-top__city-modal__select";
   const imageCiti = document.createElement("img");
@@ -146,18 +146,33 @@ const onAddData = (e) => {
   selectCiti.textContent = e.target.textContent;
   selectCiti.appendChild(imageCiti);
   selectedAll.appendChild(selectCiti);
+
+  
+
+ 
+  selectedAll.onclick = (e) => {
+    if (e.target === item) {
+       selectCiti.remove();
+    }
+  }
+
   imageCiti.onclick = () => {
     selectCiti.remove();
-    btnModal.classList.toggle("active");
+    if (selectedAll.children.length === 0) {
+      btnModal.classList.remove("active");
+    }
   };
-    btnModal.classList.toggle("active");
-
+  btnModal.classList.add("active");
 };
 
 const onAddSelected = () => {
-if (selectedAll.children.length) {
-  
-}
+  let selectCitis = "";
+  if (selectedAll.children.length) {
+    for (let i = 0; i < selectedAll.children.length; i++) {
+      selectCitis += selectedAll.children[i].textContent + " ";
+    }
+  }
+  scope.textContent = selectCitis;
 };
 
 btnModal.onclick = onAddSelected;
@@ -174,7 +189,7 @@ const onShowModal = () => {
       area.setAttribute("data-type", ariasData[i].type);
       area.textContent = ariasData[i].name;
       areasList.appendChild(area);
-      area.onclick = onAddData;
+      area.onclick = e => onAddData(e, area);
       if (ariasData[i].cities) {
         let cities = ariasData[i].cities;
         for (let j = 0; j < cities.length; j++) {
@@ -184,7 +199,7 @@ const onShowModal = () => {
           city.setAttribute("data-type", cities[j].type);
           city.textContent = cities[j].name;
           areasList.appendChild(city);
-          city.onclick = onAddData;
+          city.onclick = e => onAddData(e, city);
         }
       }
     }

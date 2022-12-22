@@ -16,6 +16,9 @@
       }
       &__city {
         position: relative;
+        max-width: 192px;
+        padding-left: 16px;
+        width: 100%;
         &-location {
           cursor: pointer;
           display: flex;
@@ -25,19 +28,26 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          border: 1px solid #a7a7a7;
+          position: relative;
+          margin-right: 8px;
+          &::before {
+            content: "";
+            position: absolute;
+            background-image: url(../images/city.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 32px;
+            left: -14px;
+            top: -14px;
           border-radius: 50%;
-          width: 32px;
-          height: 32px;
-          padding: 7px 2px 5px 1px;
+          border: 1px solid #a7a7a7;
 
-          &:hover {
-            border: 1px solid #fff;
           }
+
         }
         &-scope {
-          margin-left: 8px;
-          margin-right: 61px;
+          margin-left: 16px;
           color: $bg;
         }
 
@@ -49,7 +59,7 @@
           border-radius: 10px;
           z-index: 1;
           top: 40px;
-          &.toggle{
+          &.toggle {
             display: none;
           }
           &__input {
@@ -83,7 +93,6 @@
             width: 100%;
             padding: 16px;
             border-bottom: 1px solid #d8d8d8;
-           
           }
           &__select {
             border: 1px solid #d8d8d8;
@@ -127,7 +136,7 @@
             padding: 8px 16px 11px;
             color: $bg;
             cursor: pointer;
-            &.hide{
+            &.hide {
               display: none;
             }
           }
@@ -231,7 +240,7 @@
       }
     }
   }
-mark{
-  background-color: rgb(101, 107, 163);
-}
+  mark {
+    background-color: rgb(101, 107, 163);
+  }
 }
