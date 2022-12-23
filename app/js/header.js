@@ -146,14 +146,9 @@ const onAddData = (e, item) => {
   selectCiti.textContent = e.target.textContent;
   selectCiti.appendChild(imageCiti);
   selectedAll.appendChild(selectCiti);
-
-  
-
  
-  selectedAll.onclick = (e) => {
-    if (e.target === item) {
-       selectCiti.remove();
-    }
+  item.onclick = () => {
+    selectCiti.remove()
   }
 
   imageCiti.onclick = () => {
@@ -175,7 +170,9 @@ const onAddSelected = () => {
   scope.textContent = selectCitis;
 };
 
-btnModal.onclick = onAddSelected;
+btnModal.onclick = () => {
+  onAddSelected()
+};
 
 let isModalOpen = false;
 const onShowModal = () => {
