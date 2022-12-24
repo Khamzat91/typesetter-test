@@ -162,13 +162,12 @@ const onAddData = (e, item) => {
 
 const onAddSelected = () => {
   let selectCitis = "";
-  scope.slice(0, 18);
   if (selectedAll.children.length) {
     for (let i = 0; i < selectedAll.children.length; i++) {
       selectCitis += selectedAll.children[i].textContent + " ";
     }
   }
-  scope.textContent = selectCitis;
+  scope.textContent = selectCitis.substring(0, 18) + '...';
 };
 
 btnModal.onclick = () => {
