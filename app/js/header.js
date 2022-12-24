@@ -164,10 +164,10 @@ const onAddSelected = () => {
   let selectCitis = "";
   if (selectedAll.children.length) {
     for (let i = 0; i < selectedAll.children.length; i++) {
-      selectCitis += selectedAll.children[i].textContent + " ";
+      selectCitis += selectedAll.children[i].textContent + ", ";
     }
   }
-  scope.textContent = selectCitis.substring(0, 18) + '...';
+  scope.textContent = selectCitis.substring(0, 17) + '...';
 };
 
 btnModal.onclick = () => {
